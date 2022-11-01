@@ -15,7 +15,7 @@ public class MyController {
 	
 	@RequestMapping("/")
 	public @ResponseBody String root() throws Exception{
-		return "Valid_initBinder (3)";
+		return "Valid_Annotation (4)";
 	}
 	@RequestMapping("/insertForm")
 	public String insert1() {
@@ -31,25 +31,29 @@ public class MyController {
 		
 //		ContentValidator validator =  new ContentValidator();
 //		validator.validate(contentDto, result);
-		if (result.hasErrors()) {
-			
-			
-			if(result.getFieldError("writer")!=null) {
-				System.out.println("1:"+result.getFieldError("writer").getCode());
-			}
-			if(result.getFieldError("content")!=null) {
-				System.out.println("2:"+result.getFieldError("content").getCode());
-			}
+		if (result.hasErrors()) {	
+//			if(result.getFieldError("writer")!=null) {
+//				System.out.println("1:"+result.getFieldError("writer").getCode());
+//			}
+//			if(result.getFieldError("content")!=null) {
+//				System.out.println("2:"+result.getFieldError("content").getCode());
+//			}
+		if(result.getFieldError("writer")!=null) {
+			System.out.println("1:"+result.getFieldError("writer").getDefaultMessage());
+		}
+		if(result.getFieldError("content")!=null) {
+			System.out.println("2:"+result.getFieldError("content").getDefaultMessage());
+		}
 			page = "createPage";
 		}
 		
 		return page;
 	}
-	@InitBinder
-	protected void initBinder(WebDataBinder binder) {
-		binder.setValidator(new ContentValidator());
-		
-	}
+//	@InitBinder
+//	protected void initBinder(WebDataBinder binder) {
+//		binder.setValidator(new ContentValidator());
+//		
+//	}
 	
 
 }
