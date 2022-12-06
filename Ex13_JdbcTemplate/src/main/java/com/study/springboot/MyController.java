@@ -19,11 +19,10 @@ public class MyController {
 	public @ResponseBody String root() throws Exception{
 		return "JdbcTemplate 사용하기";
 	}
-
+//	@GetMapping("/user")
 	@RequestMapping(value="/user", method = RequestMethod.GET)
 	public String userlistPage(Model model) {
 		model.addAttribute("users", userDao.list());
-		System.out.println("아아아아");
 		return "userlist";
 	}
 	

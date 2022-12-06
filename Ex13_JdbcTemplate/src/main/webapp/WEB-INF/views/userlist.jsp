@@ -13,10 +13,9 @@
 %>
 <br>
 
-<c:forEach var="dto" items="${users}">
-	${dto.id} / ${dto.name}<br>
+<c:forEach var="dto" items="${users }">
+	${dto.id } / ${dto.name }<br>
 </c:forEach>
-
 
 </body>
 </html>
