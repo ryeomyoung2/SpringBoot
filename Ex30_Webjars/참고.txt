@@ -1,1 +1,4 @@
 httpsgubok.tistory.com502
+
+드라이브 위치 옮길때 
+d:
